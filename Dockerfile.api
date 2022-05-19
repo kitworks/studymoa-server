@@ -1,0 +1,14 @@
+FROM node:12.18.2-slim
+
+EXPOSE 4000
+
+WORKDIR /usr/app
+
+# 캐싱
+COPY package.json package.json
+RUN npm install
+# 코드 복사
+COPY . .
+RUN npm install -g json-server
+# CMD [ "npm", "run", "start" ]
+CMD [ "json-server", "--watch", "data.json", "--port", "4000", "--host", "0.0.0.0" ]

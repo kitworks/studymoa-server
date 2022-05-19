@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  web:
+    # ubuntu@ip-172-31-16-247:/etc/apache2$ apache2 -v
+    # Server version: Apache/2.4.29 (Ubuntu)
+    # Server built:   2022-03-16T16:53:42
+    # image: httpd:2.4.29
+    # image: ubuntu/apache2:2.4-20.04_beta
+    build:
+      context: ./studymoa_web
+      dockerfile: Dockerfile.web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./studymoa_web/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./studymoa_home:/var/www/html
+      - ./studymoa_admin/build:/var/www/html/admin
+    # volumes:
+    #   - ./studymoa_web/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+    #   - ./studymoa_home:/usr/local/apache2/htdocs/
+    #   - ./studymoa_admin/build:/usr/local/apache2/htdocs/admin
+  app:
+    build:
+      context: ./studymoa_api
+      dockerfile: Dockerfile.api
+    ports:
+      - "4000:4000"
+  debug:
+    image: praqma/network-multitool
+  # admin:
+  #   build:
+  #     context: ./studymoa_admin
+  #     dockerfile: Dockerfile.admin
+  #   volumes:
+  #     - ./studymoa_admin/build:admin-html
+
+volumes:
+  admin-html:

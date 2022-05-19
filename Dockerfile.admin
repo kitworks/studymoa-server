@@ -1,0 +1,12 @@
+FROM node:12.18.2-slim
+
+WORKDIR /usr/app
+
+# 캐싱
+COPY package.json package.json
+RUN npm install
+# 코드 복사
+COPY . .
+
+CMD [ "npm", "run", "build" ]
+# VOLUME [ "/data" ]
