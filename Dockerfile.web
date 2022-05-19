@@ -2,3 +2,5 @@ FROM ubuntu/apache2:2.4-20.04_beta
 USER root
 RUN ["a2enmod", "proxy_http"]
 RUN ["a2enmod", "ssl"]
+RUN ["mkdir", "p", "/etc/letsencrypt/live/stgstudymoa.shop"]
+COPY /etc/letsencrypt/live/stgstudymoa.shop /etc/letsencrypt/live/stgstudymoa.shop
