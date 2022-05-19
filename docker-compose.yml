@@ -20,6 +20,7 @@ services:
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
       - /etc/letsencrypt/live/stgstudymoa.shop:/etc/letsencrypt/live/stgstudymoa.shop
+      - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
     # volumes:
     #   - ./studymoa_web/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     #   - ./studymoa_home:/usr/local/apache2/htdocs/
