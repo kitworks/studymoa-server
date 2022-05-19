@@ -10,5 +10,5 @@ RUN npm install
 # 코드 복사
 COPY . .
 RUN npm install -g json-server
-# CMD [ "npm", "run", "start" ]
-CMD [ "json-server", "--watch", "data.json", "--port", "4000", "--host", "0.0.0.0" ]
+CMD [ "npm", "run", "start" ]
+# CMD [ "json-server", "--watch", "data.json", "--port", "4000", "--host", "0.0.0.0" ]
