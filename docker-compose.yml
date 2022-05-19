@@ -17,6 +17,7 @@ services:
       - ./studymoa_web/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
+      - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
     # volumes:
     #   - ./studymoa_web/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     #   - ./studymoa_home:/usr/local/apache2/htdocs/
