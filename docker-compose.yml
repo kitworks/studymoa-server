@@ -14,6 +14,7 @@ services:
       - "443:443"
     volumes:
       - ./studymoa_web/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./studymoa_web/default-ssl.conf:/etc/apache2/sites-available/default-ssl.conf
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
     # volumes:
