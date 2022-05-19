@@ -5,7 +5,8 @@
     "repository": "https://github.com/kitworks/studymoa_api.git",
     "license": "MIT",
     "scripts": {
-      "start": "node index.js",
+      "start": "cross-env NODE_PATH=src node src",
+      "mock": "node index.js",
       "dev": "cross-env NODE_PATH=src nodemon --watch src/ src/index.js",
       "test": "mocha",
       "prettier": "prettier --write ./src/**/*.{js,scss,ts}",
