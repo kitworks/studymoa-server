@@ -21,6 +21,7 @@ services:
       - ./studymoa_admin/build:/var/www/html/admin
       - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
       - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
+      - /etc/localtime:/etc/localtime:ro
     # volumes:
     #   - ./studymoa_web/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
     #   - ./studymoa_home:/usr/local/apache2/htdocs/
@@ -31,8 +32,12 @@ services:
       dockerfile: Dockerfile.api
     ports:
       - "4000:4000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
   debug:
     image: praqma/network-multitool
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
   # admin:
   #   build:
   #     context: ./studymoa_admin
