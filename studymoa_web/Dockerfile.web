@@ -1,0 +1,8 @@
+FROM ubuntu/apache2:2.4-20.04_beta
+USER root
+RUN ["a2enmod", "proxy_http"]
+RUN ["a2enmod", "ssl"]
+RUN ["a2enmod", "rewrite"]
+RUN ["a2enmod", "proxy_balancer"]
+RUN ["a2enmod", "lbmethod_byrequests"]
+RUN ["mkdir", "-p", "/etc/letsencrypt/live/stgstudymoa.shop"]
