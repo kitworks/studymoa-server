@@ -25,7 +25,14 @@ docker-compose build
 # sleep 10
 log "start_app == $start_app down_app == $down_app"
 log "아파치 프록시 $down_app->$start_app 변경"
-sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf;;
+    Darwin*)    sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf;;
+    *)          exit 1
+esac
+
 is_run_web=`docker-compose -p studymoa-server ps  | grep Up | grep 'web' | wc -l`
 log "아파치 컨테이너 체크 == $is_run_web"
 if [ $is_run_web -eq 1 ]; then
