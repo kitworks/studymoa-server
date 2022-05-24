@@ -7,7 +7,8 @@ log () {
   echo -e "[LOG]" "\033[32;1m"`date "+%Y-%m-%d %H:%M:%s"`"\033[0m" "\033[33;1m"$1"\033[0m"
 }
 
-blue=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | wc -l`
+blue=`docker-compose -p studymoa-server ps  | grep '4000->4000' | wc -l`
+# blue=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | wc -l`
 if [ $blue -eq 1 ]; then
     start_app="green"
     down_app="blue"
