@@ -2,15 +2,15 @@
     "api": [
         {
             "id": 1231, 
-            "title": "Zero to One", 
+            "title": "Green", 
             "author":"Peter Thiel", 
             "year_published": 2014,
             "rating": 4.03
         },
         {
             "id": 100002, 
-            "title": "The Origin of Species", 
-            "author": "Charles Darwin", 
+            "title": "Green", 
+            "author": "Darwin MAC OS", 
             "year_published": 1889,
             "rating": 4.20
         }
