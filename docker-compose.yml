@@ -31,8 +31,8 @@ services:
   blue:
     container_name: blue
     build:
-      context: ./studymoa_api/blue
-      dockerfile: Dockerfile.api
+      context: ./studymoa_api_mock/blue
+      dockerfile: Dockerfile.mock.api
     ports:
       - "4000:4000"
     volumes:
@@ -41,8 +41,8 @@ services:
   green:
     container_name: green
     build:
-      context: ./studymoa_api/green
-      dockerfile: Dockerfile.api
+      context: ./studymoa_api_mock/green
+      dockerfile: Dockerfile.mock.api
     ports:
       - "4001:4000"
     volumes:

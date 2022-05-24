@@ -10,8 +10,8 @@
 	# ErrorLog ${APACHE_LOG_DIR}/error.log
 	# CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-	ProxyPass /api http://green:4000/api
-	ProxyPassReverse /api http://green:4000/api
+	ProxyPass /api http://blue:4000/api
+	ProxyPassReverse /api http://blue:4000/api
 </VirtualHost>
 
 <VirtualHost *:80>

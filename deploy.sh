@@ -3,37 +3,38 @@
 # 4000 = blue
 # 4001 = green
 
-# EXIST_A=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000'`
-blue=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | wc -l`
-echo "$blue"
+log () {
+  echo -e "[LOG]" "\033[32;1m"`date "+%Y-%m-%d %H:%M:%s"`"\033[0m" "\033[33;1m"$1"\033[0m"
+}
 
+blue=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | wc -l`
 blue_app=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | awk '{print $1}'`
+log $blue
 if [ $blue -eq 1 ]; then
-	echo "\$VALUE is 1"
     start_app="green"
     down_app="blue"
-    echo "2" > config.txt
     echo "CURRENT=green" > .env
 else
-	echo "\$VALUE is 2"
     start_app="blue"
     down_app="green"
-    echo "1" > config.txt
     echo "CURRENT=blue" > .env
 fi
 source .env
-echo "이미지 빌드"
+log "이미지 빌드"
 docker-compose build
 # sleep 10
-echo "start_app == $start_app down_app == $down_app"
-echo "s/$down_app/$start_app/g"
+log "start_app == $start_app down_app == $down_app"
+log "아파치 프록시 $down_app->$start_app 변경"
 sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf
 is_run_web=`docker-compose -p studymoa-server ps  | grep Up | grep 'web' | wc -l`
+log "아파치 컨테이너 체크 == $is_run_web"
 if [ $is_run_web -eq 1 ]; then
     docker-compose up -d $start_app
     docker-compose exec -e CURRENT=${CURRENT} web service apache2 reload
+    log "아파치 리로드"
 else 
     docker-compose up -d web $start_app
+    log "아파치 및 $start_app 실행"
 fi
 
 docker stop $down_app > /dev/null
