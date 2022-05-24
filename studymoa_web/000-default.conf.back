@@ -5,13 +5,22 @@
 
 	ServerAdmin wj@kit-works.com
 	DocumentRoot /var/www/html
+
+# echo -e "\033[32;1m"Test"\033[0m"
+	# 아파치 로드 포맷
+	# SetEnv START "\e[1;34m" # for a green text, you can use other colors as well
+	# SetEnv END "\e[0m"
+	LogFormat "${START} %h [green] %v %T %U %q \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" ${END}" common_color
+	# LogFormat "%h [green] %v %T %U %q \"${START}\"%r\"${END}\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" common_color
+	# LogFormat "%h [green] %v %T %U %q \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" 
+
 	ErrorLog /dev/stderr
  	TransferLog /dev/stdout
 	# ErrorLog ${APACHE_LOG_DIR}/error.log
 	# CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-	ProxyPass /api http://blue:4000/api
-	ProxyPassReverse /api http://blue:4000/api
+	ProxyPass /api http://green:4000/api
+	ProxyPassReverse /api http://green:4000/api
 </VirtualHost>
 
 <VirtualHost *:80>
