@@ -36,8 +36,8 @@ is_run_web=`docker-compose -p studymoa-server ps  | grep Up | grep 'web' | wc -l
 log "아파치 컨테이너 체크 == $is_run_web"
 if [ $is_run_web -eq 1 ]; then
     docker-compose up -d $start_app
-    sleep 10
-    docker-compose exec -e CURRENT=${CURRENT} sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf
+    # sleep 10
+    # docker-compose exec -e CURRENT=${CURRENT} sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf
     docker-compose exec -e CURRENT=${CURRENT} web service apache2 reload
     log "아파치 리로드"
 else 
