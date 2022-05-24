@@ -12,6 +12,4 @@ COPY . .
 # TimeZone 설정
 ENV TZ Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-# CMD [ "npm", "run", "start" ]
-RUN npm install -g json-server
-CMD [ "json-server", "--watch", "data.json", "--port", "4000", "--host", "0.0.0.0" ]
+ENTRYPOINT [ "npm", "run", "start" ]
