@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  blue:
+    container_name: blue_mock
+    build:
+      context: ./studymoa_api_mock/blue
+      dockerfile: Dockerfile.mock.api
+    ports:
+      - "4000:4000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: on-failure:5
+  green:
+    container_name: green_mock
+    build:
+      context: ./studymoa_api_mock/green
+      dockerfile: Dockerfile.mock.api
+    ports:
+      - "4001:4000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    restart: on-failure:5
