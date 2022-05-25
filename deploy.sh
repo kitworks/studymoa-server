@@ -27,8 +27,8 @@ log "아파치 프록시 $down_app->$start_app 변경"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf;;
-    Darwin*)    sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf;;
+    Linux*)     sed -i "s/$down_app/$start_app/g" ./studymoa_web/sites-available/000-default.conf;;
+    Darwin*)    sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/sites-available/000-default.conf;;
     *)          exit 1
 esac
 
