@@ -28,7 +28,7 @@ services:
   blue:
     container_name: blue
     build:
-      context: ./studymoa_api/blue
+      context: ./studymoa_api
       dockerfile: Dockerfile.api
     ports:
       - "4000:4000"
@@ -38,7 +38,7 @@ services:
   green:
     container_name: green
     build:
-      context: ./studymoa_api/green
+      context: ./studymoa_api
       dockerfile: Dockerfile.api
     ports:
       - "4001:4000"
