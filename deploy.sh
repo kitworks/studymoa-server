@@ -39,7 +39,7 @@ if [ $is_run_web -eq 1 ]; then
     docker-compose up -d $start_app
     # sleep 10
     # docker-compose exec -e CURRENT=${CURRENT} sed -i "s/$down_app/$start_app/g" ./studymoa_web/000-default.conf
-    docker-compose exec -e CURRENT=${CURRENT} web service apache2 reload
+    docker-compose exec -d -e CURRENT=${CURRENT} web service apache2 reload
     log "아파치 리로드"
 else 
     docker-compose up -d web $start_app
