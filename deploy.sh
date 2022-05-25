@@ -1,5 +1,7 @@
 #!/bin/bash
 
+WORKDIR=/home/ubuntu/studymoa-server
+cd $WORKDIR
 # 4000 = blue
 # 4001 = green
 
