@@ -9,7 +9,7 @@ log () {
   echo -e "[LOG]" "\033[32;1m"`date "+%Y-%m-%d %H:%M:%s"`"\033[0m" "\033[33;1m"$1"\033[0m"
 }
 
-blue=`docker-compose -p studymoa-server ps  | grep '4000->4000' | wc -l`
+blue=`docker compose -p studymoa-server ps  | grep '4000->4000' | wc -l`
 # blue=`docker-compose -p studymoa-server ps  | grep Up | grep '4000->4000' | wc -l`
 if [ $blue -eq 1 ]; then
     start_app="green"
@@ -35,7 +35,7 @@ case "${unameOut}" in
 esac
 
 # is_run_web=`docker-compose -p studymoa-server ps  | grep Up | grep 'web' | wc -l`
-is_run_web=`docker-compose -p studymoa-server ps | grep 'web' | wc -l`
+is_run_web=`docker compose -p studymoa-server ps | grep 'web' | wc -l`
 log "아파치 컨테이너 체크 == $is_run_web"
 if [ $is_run_web -eq 1 ]; then
     docker-compose up -d $start_app
@@ -51,4 +51,4 @@ fi
 docker stop $down_app > /dev/null
 # sleep 10
 # docker-compose up -d web
-docker-compose ps
+docker compose ps

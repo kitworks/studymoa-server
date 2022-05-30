@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash ./entrypoint.sh &
+bash ./entrypoint.sh

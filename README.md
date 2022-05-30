@@ -23,12 +23,15 @@ Docker version 20.10.16, build aa7e414
 ### docker-compose 설치
 
 ```
-sudo apt-get install docker-compose docker-compose-plugin -y
+$ DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+$ mkdir -p $DOCKER_CONFIG/cli-plugins
+$ curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+$ chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 ```
 
 ```
-ubuntu@ip-172-31-14-93:~$ docker-compose -v
-docker-compose version 1.17.1, build unknown
+ubuntu@ip-172-31-14-93:~/studymoa-server$ docker compose version
+Docker Compose version v2.5.0
 ```
 ## 인증서 발급 certbot
 
