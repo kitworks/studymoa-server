@@ -20,6 +20,18 @@ ubuntu@ip-172-31-14-93:~$ docker -v
 Docker version 20.10.16, build aa7e414
 ```
 
+### docker login 시 에러
+
+```
+~$ docker login repository.com
+** Message: 01:40:19.095: Remote error from secret service: org.freedesktop.DBus.Error.UnknownMethod:....
+Error saving credentials: error storing credentials - err: exit status 1, out: `No such interface 'org.freedesktop.Secret.Collection' on object....
+```
+
+```
+sudo apt-get install gnupg2 pass -y
+```
+
 ### docker-compose 설치
 
 ```
