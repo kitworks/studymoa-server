@@ -9,9 +9,10 @@ jobs:
     env:
       CI: false
     steps:
+      - name: Checkout source code.
+        uses: actions/checkout@v2
       - name: zip create 
-        # run: zip -qq -r ./build-fe.zip ./build
-        run: zip -qq -r ./build-fe.zip .
+        run: zip -qq -r ./build-server.zip .
         shell: bash
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
