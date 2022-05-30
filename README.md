@@ -6,7 +6,30 @@ dockerfile.api
 ubuntu@ip-172-31-24-106:~/studymoa-server$ ln Dockerfile.web ./studymoa_web/Dockerfile.web
 ubuntu@ip-172-31-24-106:~/studymoa-server$ ln Dockerfile.api ./studymoa_api/Dockerfile.api
 
+## Setup
 
+### docker 설치 
+
+```
+curl -s https://get.docker.com | sudo sh
+sudo usermod -aG docker $USER
+```
+
+```
+ubuntu@ip-172-31-14-93:~$ docker -v
+Docker version 20.10.16, build aa7e414
+```
+
+### docker-compose 설치
+
+```
+sudo apt-get install docker-compose docker-compose-plugin -y
+```
+
+```
+ubuntu@ip-172-31-14-93:~$ docker-compose -v
+docker-compose version 1.17.1, build unknown
+```
 ## 인증서 발급 certbot
 
 https://blog.wsgvet.com/letsencrypt-wildcard-certification-issue-and-mariadb-install/
@@ -54,3 +77,5 @@ https://devlog.jwgo.kr/2019/04/16/how-to-lets-encrypt-ssl-renew/
 ```
 $ certbot renew --dry-run
 ```
+
+### github action && code deploy
