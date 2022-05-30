@@ -78,4 +78,10 @@ https://devlog.jwgo.kr/2019/04/16/how-to-lets-encrypt-ssl-renew/
 $ certbot renew --dry-run
 ```
 
-### github action && code deploy
+## github action && code deploy
+
+### code deploy 로그 조회
+
+```
+tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
+```

@@ -32,4 +32,4 @@ jobs:
           --application-name stg-studymoa-admin
           --deployment-config-name CodeDeployDefault.AllAtOnce
           --deployment-group-name stg-studymoa-admin
-          --s3-location bucket=kitworks,key=deploy/build-fe.zip,bundleType=zip
+          --s3-location bucket=kitworks,key=deploy/build-server.zip,bundleType=zip
