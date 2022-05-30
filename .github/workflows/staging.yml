@@ -25,7 +25,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
-          aws s3 cp --region ${AWS_REGION} ./build-fe.zip s3://kitworks/deploy/build-fe.zip
+          aws s3 cp --region ${AWS_REGION} ./build-server.zip s3://kitworks/deploy/build-server.zip
       - name: Deploy # Deploy to EC2
         run: aws deploy create-deployment
           --application-name stg-studymoa-admin
