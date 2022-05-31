@@ -33,9 +33,9 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
           aws s3 cp --region ${AWS_REGION} ./build-server.zip s3://kitworks/deploy/release/build-server.zip
-      # - name: Deploy # Deploy to EC2
-      #   run: aws deploy create-deployment
-      #     --application-name staging-studymoa
-      #     --deployment-config-name CodeDeployDefault.AllAtOnce
-      #     --deployment-group-name studymoa-server
-      #     --s3-location bucket=kitworks,key=deploy/release/build-server.zip,bundleType=zip
+      - name: Deploy # Deploy to EC2
+        run: aws deploy create-deployment
+          --application-name release-studymoa
+          --deployment-config-name CodeDeployDefault.AllAtOnce
+          --deployment-group-name studymoa-server
+          --s3-location bucket=kitworks,key=deploy/release/build-server.zip,bundleType=zip
