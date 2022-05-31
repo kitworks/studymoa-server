@@ -1,8 +1,41 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  # docker-compose.yml
+  - source: /docker-compose.yml
     destination: /home/ubuntu/studymoa-server
+  - source: /docker-compose.mock.yml
+    destination: /home/ubuntu/studymoa-server
+  # Source
+  - source: /studymoa_api
+    destination: /home/ubuntu/studymoa-server/studymoa_api
+  - source: /studymoa_api_mock
+    destination: /home/ubuntu/studymoa-server/studymoa_api_mock
+  - source: /studymoa_home
+    destination: /home/ubuntu/studymoa-server/studymoa_home
+  - source: /studymoa_admin
+    destination: /home/ubuntu/studymoa-server/studymoa_admin
+  - source: /studymoa_web
+    destination: /home/ubuntu/studymoa-server/studymoa_web
+  # Dockerfile
+  - source: /Dockerfile.api
+    destination: /home/ubuntu/studymoa-server/studymoa_api
+  - source: /Dockerfile.mock.api
+    destination: /home/ubuntu/studymoa-server/studymoa_api_mock
+  - source: /Dockerfile.admin
+    destination: /home/ubuntu/studymoa-server/studymoa_admin
+  - source: /Dockerfile.web
+    destination: /home/ubuntu/studymoa-server/studymoa_web
+  - source: /pem
+    destination: /home/ubuntu/studymoa-server/pem
+  # script
+  - source: /deploy.sh
+    destination: /home/ubuntu/studymoa-server/
+  - source: /entrypoint.sh
+    destination: /home/ubuntu/studymoa-server/
+  # 파일 전부 덮어써서 별도 정의
+  # - source: /
+  #   destination: /home/ubuntu/studymoa-server
 file_exists_behavior: OVERWRITE
 permissions:
   - object: /home/ubuntu/studymoa-server
