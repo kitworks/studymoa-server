@@ -3,9 +3,9 @@ os: linux
 files:
   # docker-compose.yml
   - source: /docker-compose.yml
-    destination: /home/ubuntu/studymoa-server/docker-compose.yml
+    destination: /home/ubuntu/studymoa-server
   - source: /docker-compose.mock.yml
-    destination: /home/ubuntu/studymoa-server/docker-compose.mock.yml
+    destination: /home/ubuntu/studymoa-server
   # Source
   - source: /studymoa_api
     destination: /home/ubuntu/studymoa-server/studymoa_api
