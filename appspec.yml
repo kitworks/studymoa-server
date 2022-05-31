@@ -3,9 +3,9 @@ os: linux
 files:
   # docker-compose.yml
   - source: /docker-compose.yml
-    destination: /home/ubuntu/studymoa-server
+    destination: /home/ubuntu/studymoa-server/docker-compose.yml
   - source: /docker-compose.mock.yml
-    destination: /home/ubuntu/studymoa-server
+    destination: /home/ubuntu/studymoa-server/docker-compose.mock.yml
   # Source
   - source: /studymoa_api
     destination: /home/ubuntu/studymoa-server/studymoa_api
@@ -19,20 +19,20 @@ files:
     destination: /home/ubuntu/studymoa-server/studymoa_web
   # Dockerfile
   - source: /Dockerfile.api
-    destination: /home/ubuntu/studymoa-server/studymoa_api
+    destination: /home/ubuntu/studymoa-server/studymoa_api/Dockerfile.api
   - source: /Dockerfile.mock.api
-    destination: /home/ubuntu/studymoa-server/studymoa_api_mock
+    destination: /home/ubuntu/studymoa-server/studymoa_api_mock/Dockerfile.mock.api
   - source: /Dockerfile.admin
-    destination: /home/ubuntu/studymoa-server/studymoa_admin
+    destination: /home/ubuntu/studymoa-server/studymoa_admin/Dockerfile.admin
   - source: /Dockerfile.web
-    destination: /home/ubuntu/studymoa-server/studymoa_web
+    destination: /home/ubuntu/studymoa-server/studymoa_web/Dockerfile.web
   - source: /pem
     destination: /home/ubuntu/studymoa-server/pem
   # script
   - source: /deploy.sh
-    destination: /home/ubuntu/studymoa-server/
+    destination: /home/ubuntu/studymoa-server/deploy.sh
   - source: /entrypoint.sh
-    destination: /home/ubuntu/studymoa-server/
+    destination: /home/ubuntu/studymoa-server/entrypoint.sh
   # 파일 전부 덮어써서 별도 정의
   # - source: /
   #   destination: /home/ubuntu/studymoa-server
