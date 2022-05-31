@@ -19,7 +19,7 @@ services:
       # - ./studymoa_web/sites-available/release:/etc/apache2/sites-available
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
-      - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
+      # - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
       - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
       - /etc/localtime:/etc/localtime:ro
     # environment:
