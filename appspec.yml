@@ -28,9 +28,9 @@ files:
   #   destination: /home/ubuntu/studymoa-server/studymoa_web/Dockerfile.web
   # script
   - source: /deploy.sh
-    destination: /home/ubuntu/studymoa-server/deploy.sh
+    destination: /home/ubuntu/studymoa-server
   - source: /entrypoint.sh
-    destination: /home/ubuntu/studymoa-server/entrypoint.sh
+    destination: /home/ubuntu/studymoa-server
   # 파일 전부 덮어써서 별도 정의
   # - source: /
   #   destination: /home/ubuntu/studymoa-server
