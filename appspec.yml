@@ -26,8 +26,6 @@ files:
   #   destination: /home/ubuntu/studymoa-server/studymoa_admin/Dockerfile.admin
   # - source: /Dockerfile.web
   #   destination: /home/ubuntu/studymoa-server/studymoa_web/Dockerfile.web
-  - source: /pem
-    destination: /home/ubuntu/studymoa-server/pem
   # script
   - source: /deploy.sh
     destination: /home/ubuntu/studymoa-server/deploy.sh
