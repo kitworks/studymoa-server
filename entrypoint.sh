@@ -21,10 +21,12 @@ if [ $blue -eq 1 ]; then
     start_app="green"
     down_app="blue"
     echo "CURRENT=green" > .env
+    echo "TARGET=$TARGET" >> .env
 else
     start_app="blue"
     down_app="green"
     echo "CURRENT=blue" > .env
+    echo "TARGET=$TARGET" >> .env
 fi
 source .env
 log "이미지 빌드"
