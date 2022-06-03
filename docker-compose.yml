@@ -14,7 +14,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./studymoa_web/sites-available/${TARGET}:/etc/apache2/sites-available
+      - ./studymoa_web/sites-available/${TARGET}:/etc/apache2/sites-enabled
+      # - ./studymoa_web/sites-available/${TARGET}:/etc/apache2/sites-available
       # - ./studymoa_web/sites-available/staging:/etc/apache2/sites-available
       ## release
       # - ./studymoa_web/sites-available/release:/etc/apache2/sites-available
