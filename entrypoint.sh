@@ -5,6 +5,12 @@ cd $WORKDIR
 # 4000 = blue
 # 4001 = green
 
+# .env 파일 내 환경변수 세팅
+while read line;
+do
+    export $line
+done < .env
+
 log () {
   echo -e "[LOG]" "\033[32;1m"`date "+%Y-%m-%d %H:%M:%s"`"\033[0m" "\033[33;1m"ß$1"\033[0m"
 }
@@ -29,8 +35,8 @@ log "아파치 프록시 $down_app->$start_app 변경"
 
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     sed -i "s/$down_app/$start_app/g" ./studymoa_web/sites-available/staging/000-default.conf;;
-    Darwin*)    sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/sites-available/staging/000-default.conf;;
+    Linux*)     sed -i "s/$down_app/$start_app/g" ./studymoa_web/sites-available/${TARGET}/000-default.conf;;
+    Darwin*)    sed -i .back "s/$down_app/$start_app/g" ./studymoa_web/sites-available/${TARGET}/000-default.conf;;
     *)          exit 1
 esac
 
