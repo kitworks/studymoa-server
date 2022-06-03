@@ -14,7 +14,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./studymoa_web/sites-available/staging:/etc/apache2/sites-available
+      - ./studymoa_web/sites-available/${TARGET}:/etc/apache2/sites-available
+      # - ./studymoa_web/sites-available/staging:/etc/apache2/sites-available
       ## release
       # - ./studymoa_web/sites-available/release:/etc/apache2/sites-available
       - ./studymoa_home:/var/www/html
@@ -22,7 +23,7 @@ services:
       # - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
       - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
       - /etc/localtime:/etc/localtime:ro
-      - ./pem:/etc/letsencrypt/live/studymoa.me
+      - ./pem:/etc/letsencrypt/live
     # environment:
     #   - CURRENT=${CURRENT}
     # apache 000-default.conf 하드코딩으로 변경 deploy.sh 참조
