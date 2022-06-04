@@ -22,7 +22,7 @@ services:
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
       # - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
-      - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
+      # - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
       - /etc/localtime:/etc/localtime:ro
       - /etc/letsencrypt:/etc/letsencrypt
     # environment:
