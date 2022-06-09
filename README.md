@@ -1,11 +1,6 @@
+# Studymoa-server
 
-TODO: 링크걸기 내부경로
-dockerfile.admin
-dockerfile.api 
-
-ubuntu@ip-172-31-24-106:~/studymoa-server$ ln Dockerfile.web ./studymoa_web/Dockerfile.web
-ubuntu@ip-172-31-24-106:~/studymoa-server$ ln Dockerfile.api ./studymoa_api/Dockerfile.api
-
+staging 과 release 서버 환경입니다.
 ## Setup
 
 ### docker 설치 
@@ -100,3 +95,10 @@ $ certbot renew --dry-run
 ```
 tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
 ```
+
+### 인증서 갱신
+
+crontab 디렉토리 참고
+
+TODO :
+https://blog.realsangil.net/posts/2018-10-31-letsencrypt-wildcard-certification-renew/
