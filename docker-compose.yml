@@ -22,9 +22,9 @@ services:
       - ./studymoa_home:/var/www/html
       - ./studymoa_admin/build:/var/www/html/admin
       # - ./pem:/etc/letsencrypt/live/stgstudymoa.shop
+      - /etc/letsencrypt:/etc/letsencrypt
       - ./studymoa_web/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
       - /etc/localtime:/etc/localtime:ro
-      - /etc/letsencrypt:/etc/letsencrypt
     # environment:
     #   - CURRENT=${CURRENT}
     # apache 000-default.conf 하드코딩으로 변경 deploy.sh 참조
