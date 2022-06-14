@@ -33,7 +33,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: "/staging/log"
+        awslogs-group: "/${TARGET}/log"
         awslogs-region: "ap-northeast-2"
         awslogs-stream: "/web/log"
   blue:
@@ -49,7 +49,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: "/staging/log"
+        awslogs-group: "/${TARGET}/log"
         awslogs-region: "ap-northeast-2"
         awslogs-stream: "/api/log"
   green:
@@ -65,7 +65,7 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: "/staging/log"
+        awslogs-group: "/${TARGET}/log"
         awslogs-region: "ap-northeast-2"
         awslogs-stream: "/api/log"
 
