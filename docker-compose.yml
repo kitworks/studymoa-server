@@ -30,6 +30,12 @@ services:
     # apache 000-default.conf 하드코딩으로 변경 deploy.sh 참조
     depends_on:
       - "${CURRENT}"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: "staging/log" 
+        awslogs-region: "ap-northeast-2" 
+        awslogs-stream: "web/log"
   blue:
     container_name: blue
     build:
