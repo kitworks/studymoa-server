@@ -33,9 +33,9 @@ services:
     logging:
       driver: awslogs
       options:
-        awslogs-group: "staging/log" 
-        awslogs-region: "ap-northeast-2" 
-        awslogs-stream: "web/log"
+        awslogs-group: "/staging/log"
+        awslogs-region: "ap-northeast-2"
+        awslogs-stream: "/web/log"
   blue:
     container_name: blue
     build:
